@@ -934,7 +934,7 @@
         }
         slider.newSlides = $(slider.vars.selector, slider);
 
-        sliderOffset = (reverse) ? slider.count - 1 - slider.currentSlide + slider.cloneOffset : slider.currentSlide + slider.cloneOffset;
+        sliderOffset = (reverse) ? slider.count - 1 - (slider.currentSlide*(slider.move ? slider.move : 1)) + slider.cloneOffset : slider.currentSlide*(slider.move ? slider.move : 1) + slider.cloneOffset;
         // VERTICAL:
         if (vertical && !carousel) {
           slider.container.height((slider.count + slider.cloneCount) * 200 + "%").css("position", "absolute").width("100%");
